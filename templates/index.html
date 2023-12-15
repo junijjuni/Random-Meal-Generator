@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Random Meal Generator</title>
+</head>
+<body>
+    <h1>Random Meal Generator</h1>
+    <form id="meal-form">
+        <label for="diet_option">Dietary Option:</label>
+        <select id="diet_option" name="diet_option">
+            <option value="vegetarian">Vegetarian</option>
+            <option value="vegan">Vegan</option>
+            <option value="none">None</option>
+        </select>
+        
+        <label for="cuisine_type">Cuisine Type:</label>
+        <select id="cuisine_type" name="cuisine_type">
+            <option value="Italian">Italian</option>
+            <option value="Mexican">Mexican</option>
+            <option value="Indian">Indian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Any">Any</option>
+        </select>
+        
+        <label for="meal_type">Meal Type:</label>
+        <select id="meal_type" name="meal_type">
+            <option value="">Any</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+        </select>
+        
+        <button type="button" id="generate-btn">Generate Random Meal</button>
+    </form>
+    <div id="meal-info" style="display: none;">
+        <h2>Meal Name: <span id="meal-name"></span></h2>
+        <img src="" alt="Meal Image" id="meal-image">
+        <h3>Ingredients:</h3>
+        <ul id="ingredients-list"></ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
